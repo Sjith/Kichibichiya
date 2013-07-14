@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:descendantFocusability="blocksDescendants"
+	android:padding="6dp">
+
+	<com.pahans.kichibichiya.view.RoundCorneredImageView
+		android:id="@+id/profile_image_left"
+		android:layout_width="@dimen/profile_image_size"
+		android:layout_height="@dimen/profile_image_size"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:radius="4dp"
+		android:scaleType="fitCenter"/>
+
+	<com.pahans.kichibichiya.view.RoundCorneredImageView
+		android:id="@+id/profile_image_right"
+		android:layout_width="@dimen/profile_image_size"
+		android:layout_height="@dimen/profile_image_size"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentTop="true"
+		android:radius="4dp"
+		android:scaleType="fitCenter"/>
+
+	<FrameLayout
+		android:id="@+id/name_frame"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_marginLeft="6dp"
+		android:layout_marginRight="6dp"
+		android:layout_toLeftOf="@+id/profile_image_right"
+		android:layout_toRightOf="@+id/profile_image_left">
+
+		<LinearLayout
+			android:id="@+id/name_container"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="left"
+			android:orientation="horizontal">
+
+			<com.pahans.sinhala.droid.project.SCTextView
+				android:id="@+id/name"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layerType="software"
+				android:singleLine="true"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textColor="?android:attr/textColorPrimary"
+				android:textStyle="bold"/>
+
+			<TextView
+				android:id="@+id/screen_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layerType="software"
+				android:paddingLeft="3dp"
+				android:paddingRight="3dp"
+				android:singleLine="true"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textColor="?android:attr/textColorSecondary"/>
+		</LinearLayout>
+	</FrameLayout>
+
+	<com.pahans.kichibichiya.view.HandleSpanClickTextView
+		android:id="@+id/text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/name_frame"
+		android:layout_alignRight="@+id/name_frame"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_below="@+id/name_frame"
+		android:layerType="software"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:textColor="?android:attr/textColorSecondary"/>
+
+	<TextView
+		android:id="@+id/list_gap_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:layerType="software"
+		android:text="@string/tap_to_load_more"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:textColor="#606060"
+		android:textStyle="bold"
+		android:visibility="gone"/>
+
+	<TextView
+		android:id="@+id/time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/text"
+		android:layout_alignRight="@+id/text"
+		android:layout_alignWithParentIfMissing="true"
+		android:layout_below="@+id/text"
+		android:layerType="software"
+		android:textColor="?android:attr/textColorSecondary"/>
+
+</RelativeLayout>
